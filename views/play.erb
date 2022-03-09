@@ -1,5 +1,5 @@
-<%= session[:player_1_name] %> vs. <%= session[:player_2_name] %>
-<br> <%= session[:player_1_name] %>'s health: 40 <%= session[:player_2_name] %>'s health: 40 
+<%= @player_1_name %> vs. <%= @player_2_name %>
+<br> <%= @player_1_name %>'s health: 40 <%= @player_2_name %>'s health: 40 
 
 <form action='/attack' method='get'>
   <input type='submit' value='attack'>
