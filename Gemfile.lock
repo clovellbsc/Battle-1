@@ -17,6 +17,7 @@ GEM
       addressable (~> 2.7)
     matrix (0.4.2)
     mini_mime (1.1.2)
+    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.13.3-arm64-darwin)
@@ -48,7 +49,16 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.2.0)
+      sinatra (= 2.2.0)
+      tilt (~> 2.0)
+    sinatra-reloader (1.0)
+      sinatra-contrib
     tilt (2.0.10)
+    webrick (1.7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -58,8 +68,11 @@ PLATFORMS
 DEPENDENCIES
   capybara
   launchy
+  rack
   rspec
   sinatra
+  sinatra-reloader
+  webrick
 
 BUNDLED WITH
    2.3.8
