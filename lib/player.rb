@@ -1,5 +1,8 @@
 class Player
-  def initialize(name, hp=40)
+
+  DEFAULT_HP = 40
+
+  def initialize(name, hp= DEFAULT_HP)
     @name = name
     @hp = hp
   end
