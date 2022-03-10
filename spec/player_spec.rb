@@ -14,12 +14,5 @@ describe Player do
 		expect(felix.hp).to eq(Player::DEFAULT_HP)
 	end
 
-	it 'attack reduces other players HP i guess' do
-    expect{felix.attack(chris)}.to change{chris.hp}.from(Player::DEFAULT_HP).to(30)
-	end
 
-	it 'receives damage when attacked' do
-		expect(chris).to receive(:receive_damage)
-		felix.attack(chris)
-	end
 end
