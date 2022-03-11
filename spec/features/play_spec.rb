@@ -58,4 +58,14 @@ feature 'Play test' do
     expect(page).to have_button("Charlotte's turn")
   end
 
+  scenario "lose screen shows when a player's hp = 0" do
+    sign_in_and_play
+    one_turn_cycle
+    one_turn_cycle
+    one_turn_cycle
+    click_button "attack"
+
+    expect(page).to have_content("Mittens's HP reduced to 0, Mittens loses!")
+  end
+
 end

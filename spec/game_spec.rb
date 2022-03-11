@@ -5,6 +5,7 @@ describe Game do
   subject(:game) { Game.new(felix, chris) }
   let(:felix) { Player.new("Felix") }
 	let(:chris) { Player.new("Chris") }
+  let(:kenny) { Player.new("Kenny", 0) }
 
   it 'should expect player 1 to retrieve felix' do
     expect(game.player1.name).to eq "Felix"
@@ -35,5 +36,10 @@ describe Game do
   it "after player 1's turn, it is now player 2's turn" do
     game.attack
     expect(game.turn).to eq chris
+  end
+
+  it "returns player's name with 0 hp" do
+    zero_hp_game = Game.new(chris, kenny)
+    expect(zero_hp_game.dead_player).to eq kenny
   end
 end

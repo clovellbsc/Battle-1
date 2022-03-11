@@ -29,7 +29,13 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = $game
     $game.attack
+    redirect "/lose" if @game.player1.is_dead? || @game.player2.is_dead?
     erb :attack
+  end
+
+  get '/lose' do
+    @game = $game
+    erb :lose
   end
 
   run! if app_file == $0

@@ -23,4 +23,12 @@ class Game
     @counter.even? ? @player1 : @player2
   end
 
+  def dead_player
+    if @player1.is_dead?
+      return @player1
+    elsif @player2.is_dead?
+      return @player2
+    end
+  end
+
 end
